@@ -1,0 +1,19 @@
+package com.vedha.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class SinglePaymentDTO {
+
+    private Long id;
+
+    private String paymentType;
+
+    private Integer amount;
+}
