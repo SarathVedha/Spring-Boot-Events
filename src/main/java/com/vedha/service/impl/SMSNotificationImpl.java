@@ -15,6 +15,6 @@ public class SMSNotificationImpl implements NotificationService {
     public void sendSinglePaymentNotification(SinglePaymentDTO singlePaymentDTO, String message) throws InterruptedException {
 
         TimeUnit.SECONDS.sleep(2);
-        log.warn("SMS Notification id: {}, status: {}" , singlePaymentDTO.getId(), message);
+        log.warn("SMS Notification id: {}, status: {}", singlePaymentDTO.getId(), message);
     }
 }

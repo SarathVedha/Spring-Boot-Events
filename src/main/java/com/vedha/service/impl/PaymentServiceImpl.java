@@ -38,7 +38,7 @@ public class PaymentServiceImpl implements PaymentService {
 
                 applicationEventPublisher.publishEvent(NotificationEvent.builder().singlePaymentDTO(singlePaymentDTO).message("success").build());
                 return Map.of("status", "success", "message", "Payment successful");
-            }else {
+            } else {
 
                 // Notification blocking the payment process
 //                emailNotification.sendSinglePaymentNotification(singlePaymentDTO, "failed");

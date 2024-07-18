@@ -4,7 +4,9 @@ import com.vedha.event.NotificationEvent;
 import com.vedha.service.NotificationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.event.*;
+import org.springframework.context.event.ContextClosedEvent;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
@@ -36,7 +38,7 @@ public class NotificationListener {
     @EventListener
     public void handleAppStartEvent(ContextRefreshedEvent contextRefreshedEvent) {
 
-        log.error("Application started: {}", contextRefreshedEvent);
+        log.warn("Application started listener: {}", contextRefreshedEvent);
     }
 
     // ContextClosedEvent is published when the ApplicationContext is closed
@@ -44,6 +46,6 @@ public class NotificationListener {
     @EventListener
     public void handleAppTerminateEvent(ContextClosedEvent contextClosedEvent) {
 
-        log.error("Application stop: {}", contextClosedEvent);
+        log.warn("Application stop listener: {}", contextClosedEvent);
     }
 }
